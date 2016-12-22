@@ -17,4 +17,4 @@
 .byebug_history
 
 # Ignore user-specific .idea files
-workspace.xml
+.idea/workspace.xml
