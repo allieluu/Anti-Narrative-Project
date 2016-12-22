@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'posts/index'
+
+  get 'posts/create'
+
+  get 'posts/edit'
+
+  get 'post/index'
+
+  get 'post/create'
+
   get '/login' => 'sessions#new'
 
   post '/login' => 'sessions#create'
