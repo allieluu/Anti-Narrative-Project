@@ -1,0 +1,12 @@
+<% if object && object.errors.size > 0 %>
+    <div class="ui error message">
+      <div class="header">
+        <%= pluralize(object.errors.size, 'error') %> with your submission
+      </div>
+      <ul class="list">
+        <% object.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  get 'posts/index'
 
-  get 'posts/create'
+  # root 'posts/index' => 'posts#index'
 
-  get 'posts/edit'
+  # get 'posts/index' => 'posts#index'
+  #
+  # get 'posts/create' => 'posts#create'
+  #
+  # get 'posts/edit' => 'posts#edit'
+
+  resources :posts
 
   get '/login' => 'sessions#new'
 
@@ -11,9 +16,9 @@ Rails.application.routes.draw do
 
   get '/logout' => 'sessions#destroy'
 
-  get 'users/new'
+  get 'users/new' => 'users#new'
 
-  get 'users/create'
+  get 'users/create' => 'users#create'
 
   get '/new_account' => 'users#new'
   post '/users' => 'users#create'
