@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  has_permalink
+
   belongs_to :user
 
   has_many :tag_sets
