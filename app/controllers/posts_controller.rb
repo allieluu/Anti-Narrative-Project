@@ -3,10 +3,18 @@ class PostsController < ApplicationController
     @posts = Post.sorted
   end
 
+  def show
+    @post = Post.find_by_permalink(params[:id])
+  end
+
+  def new
+    @post = Post.new
+  end
+
   def create
     @post = Post.new(post_params)
     if @post.save
-      flash[:notice] = "Your post is now published!"
+      flash[:notice] = 'Your post is now published!'
     else
       
     end

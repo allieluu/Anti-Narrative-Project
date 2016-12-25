@@ -5,11 +5,11 @@ class Post < ApplicationRecord
   has_many :tags, through: :tag_sets
 
   scope :sorted, -> { order(:updated_at => :desc) }
-  scope :search_by_title, ->(query) { where(["title LIKE ?", "%#{query}"]) }
-  scope :search_by_user, ->(query) { where(["user_id LIKE ?", "%#{query}"]) }
+  scope :search_by_title, ->(query) { where(['title LIKE ?', "%#{query}"]) }
+  scope :search_by_user, ->(query) { where(['user_id LIKE ?', "%#{query}"]) }
 
-  validates :title, :presence => true, :length => {maximum: 255}
-  validates :content, :presence => true
+  validates :title, :presence => true, :length => {within: 1..255}
+  validates :content, :presence => true, :length => {minimum: 10}
 
   def all_tags=(names)
     @tags = names.split(',').map do |name|
