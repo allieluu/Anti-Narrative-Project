@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_permalink :username
   has_secure_password
 
   has_many :posts
@@ -11,4 +12,5 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true, length: {within: 8..25}
   validates :email, presence: true, format: EMAIL_REGEX
   validates :password, presence: true, length: {minimum: 8}, confirmation: true
+
 end

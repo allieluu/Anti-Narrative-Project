@@ -1,10 +1,42 @@
-<h1>Create New Account</h1>
-<%= form_for :user, url: '/users' do |f| %>
+<!-- TODO: Extract surrounding logic for partial -->
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui teal header">
+      <div class="content">
+        Create New Account
+      </div>
+    </h2>
+    <%= form_for :user, url: '/users', :html => {:class => 'ui large form'} do |f| %>
+        <div class="ui stacked segment">
+          <div class="required field">
+            <%= f.text_field(:username, :placeholder => 'username') %>
+          </div>
+          <div class="field">
+            <%= f.text_field(:email, :placeholder => 'email address') %>
+          </div>
+          <div class="two fields">
+            <div class="required field">
+              <%= f.password_field(:password, :placeholder => 'password') %>
+            </div>
+            <div class="required field">
+              <%= f.password_field(:password_confirmation, :placeholder => 'confirm password') %>
+            </div>
+          </div>
+          <%= f.submit('Submit', :class => 'ui fluid teal submit button') %>
+        </div>
 
-    Name: <%= f.text_field(:name) %>
-    Email: <%= f.text_field(:email) %>
-    Password: <%= f.password_field(:password) %>
-    Password Confirmation: <%= f.password_field(:password_confirmation) %>
-    <%= f.submit("Submit") %>
+    <% end %>
+    <% if @user.errors.any? %>
+        <div class="bottom attached">
+          <%= error_messages_for(@user) %>
+        </div>
+    <% end %>
+  </div>
 
-<% end %>
+
+
+</div>
+
+
+
+
