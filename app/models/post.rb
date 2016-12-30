@@ -13,14 +13,19 @@ class Post < ApplicationRecord
   validates :title, :presence => true, :length => {within: 1..255}
   validates :content, :presence => true, :length => {minimum: 10}
 
+  # Setter
   def all_tags=(names)
-    @tags = names.split(',').map do |name|
+    self.tags = names.split(',').map do |name|
       Tag.where(name: name).first_or_create!
     end
   end
 
+  # Getter
   def all_tags
-    @tags.map(&:name).join(', ')
+    self.tags.map(&:name).join(', ')
   end
 
+  def self.get_username(id)
+    User.find(id).username
+  end
 end

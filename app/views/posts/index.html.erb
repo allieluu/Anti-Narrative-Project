@@ -1,2 +1,16 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h2 class="ui centered teal block header">Posts</h2>
+
+<div class="ui middle aligned center aligned stackable grid">
+
+  <div class="ui centered cards">
+    <% @posts.each do |post| %>
+        <div class="card">
+          <div class="content">
+            <div class="header"><%= post.title %></div>
+            <h5 class="meta"><%= Post.get_username(post.user_id) %></h5>
+            <p><%= post.content %></p>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

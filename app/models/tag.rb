@@ -4,5 +4,9 @@ class Tag < ApplicationRecord
   has_many :tag_sets
   has_many :posts, through: :tag_sets
 
-  validates :name, :presence => true, :length => {within: 1..255}
+  scope :search_by_name, -> (query) { where(['name LIKE ?', "%#{query}"]) }
+  scope :sorted, -> { order(:name => :asc) }
+
+  validates :name, presence: true, length: {within: 1..255}, uniqueness: true
+
 end
