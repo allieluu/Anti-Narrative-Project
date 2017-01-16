@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   before_action :current_user
 
-  before_action :authorize
+  # before_action :authorize
 
   def index
     @posts = Post.sorted

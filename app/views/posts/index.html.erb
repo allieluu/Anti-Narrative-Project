@@ -1,4 +1,7 @@
-<h2 class="ui centered teal block header">Posts</h2>
+<div class="ui stackable container menu">
+  <%= link_to('New Post', new_post_path, html_options = {:class => 'item'}) %>
+  <%= link_to('Log Out', {:controller => 'sessions', :action => 'destroy'}, html_options = {:class => 'item'})%>
+</div>
 
 <div class="ui middle aligned center aligned stackable grid">
 
