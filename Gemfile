@@ -24,7 +24,8 @@ gem 'therubyracer', platforms: :ruby
 # Add jQuery
 gem 'jquery-rails'
 
-gem 'record_tag_helper', '~> 1.0'
+gem 'record_tag_helper'
+gem 'concurrent-ruby', '~> 1.0.4'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
@@ -61,3 +62,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+ruby '2.3.3'

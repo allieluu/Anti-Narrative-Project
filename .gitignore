@@ -34,3 +34,5 @@
 .idea/anti_narrative_project.iml
 .idea/*.xml
 .idea/runConfigurations/*.xml
+.idea/
+.ruby-version
