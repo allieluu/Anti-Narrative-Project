@@ -3,7 +3,7 @@
   <%= link_to('Log Out', {:controller => 'sessions', :action => 'destroy'}, html_options = {:class => 'item'})%>
 </div>
 
-<div class="ui middle aligned center aligned stackable grid">
+<div class="ui stackable one column grid container">
 
   <div class="ui centered cards">
     <% @posts.each do |post| %>
