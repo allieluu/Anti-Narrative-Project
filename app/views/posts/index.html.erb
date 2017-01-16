@@ -13,9 +13,10 @@
 <div class="ui very relaxed divided items very padded container segment">
 
   <% @posts.each do |post| %>
-      <div class="item">
+      <!--<div class="item">-->
+      <div class="ui raised very padded text container segment">
         <div class="content">
-          <div class="header"><%= post.title %></div>
+          <div class="ui header"><%= post.title %></div>
           <h5 class="meta"><%= Post.get_username(post.user_id) %></h5>
           <div class="description">
             <p><%= post.content %></p>
