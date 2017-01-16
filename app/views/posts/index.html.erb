@@ -1,19 +1,27 @@
-<div class="ui stackable container menu">
-  <%= link_to('New Post', new_post_path, html_options = {:class => 'item'}) %>
-  <%= link_to('Log Out', {:controller => 'sessions', :action => 'destroy'}, html_options = {:class => 'item'})%>
-</div>
-
-<div class="ui stackable one column grid container">
-
-  <div class="ui centered cards">
-    <% @posts.each do |post| %>
-        <div class="card">
-          <div class="content">
-            <div class="header"><%= post.title %></div>
-            <h5 class="meta"><%= Post.get_username(post.user_id) %></h5>
-            <p><%= post.content %></p>
-          </div>
-        </div>
+<div class="ui stackable container top fixed menu">
+  <div class="container">
+    <div class="teal header item">The Empathy Project</div>
+    <%= link_to('New Post', new_post_path, html_options = {:class => 'item'}) %>
+    <% if current_user != nil %>
+        <%= link_to('Log Out', {:controller => 'sessions', :action => 'destroy'}, html_options = {:class => 'item'}) %>
+    <% else %>
+        <%= link_to('Login', {:controller => 'sessions', :action => 'new'}, html_options = {:class => 'item'}) %>
     <% end %>
   </div>
 </div>
+
+<div class="ui very relaxed divided items very padded container segment">
+
+  <% @posts.each do |post| %>
+      <div class="item">
+        <div class="content">
+          <div class="header"><%= post.title %></div>
+          <h5 class="meta"><%= Post.get_username(post.user_id) %></h5>
+          <div class="description">
+            <p><%= post.content %></p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+
