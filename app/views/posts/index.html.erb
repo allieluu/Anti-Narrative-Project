@@ -1,6 +1,6 @@
-<div class="ui stackable container top fixed menu">
+<div class="ui stackable container top fixed teal inverted menu">
   <div class="container">
-    <div class="teal header item">The Empathy Project</div>
+    <div class="header item">The Empathy Project</div>
     <%= link_to('New Post', new_post_path, html_options = {:class => 'item'}) %>
     <% if current_user != nil %>
         <%= link_to('Log Out', {:controller => 'sessions', :action => 'destroy'}, html_options = {:class => 'item'}) %>

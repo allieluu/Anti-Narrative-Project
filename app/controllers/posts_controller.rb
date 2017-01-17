@@ -24,6 +24,7 @@ class PostsController < ApplicationController
       flash[:notice] = 'Your post is now published!'
       redirect_to(posts_path)
     else
+      logger.debug(@post.errors.full_messages)
       redirect_to(new_post_path)
     end
   end
@@ -46,7 +47,7 @@ class PostsController < ApplicationController
 
   def post_params
     # params.require(:post).permit(:user_id, :content, :all_tags)
-    params.require(:post).permit(:title, :content, :user_id, :all_tags => [])
-    params['post']['all_tags'] = params['post']['all_tags'].split(',').strip('"')
+    params.require(:post).permit(:title, :content, :user_id)
+    # params['post']['all_tags'] = params['post']['all_tags'].split(',').strip('"')
   end
 end
