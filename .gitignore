@@ -36,3 +36,4 @@
 .idea/runConfigurations/*.xml
 .idea/
 .ruby-version
+public/.DS_STORE

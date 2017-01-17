@@ -1,3 +1,21 @@
 /*******************************
      User Global Variables
 *******************************/
+
+/*-------------------
+     Fonts
+--------------------*/
+
+@headerFont        : 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pageFont          : 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@fontSmoothing     : antialiased;
+
+@importGoogleFonts : true;
+@googleFontName    : 'Lato';
+@googleFontSizes   : '400,700';
+@googleFontFamily  : '@{googleFontName}:@{googleFontSizes}';
+
+/*--- Colors ---*/
+@teal           :#36D7B7;
+@primaryColor   :@teal;
+@secondaryColor :@white;
