@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my final project for DAN 210: Power, Structure, and the Human Body, in which I explored the question "Can the Structure of Social Media be Changed to Promote Empathy?" 
+If you would like to read my final report (non-technical), you can find it [here](https://drive.google.com/file/d/0B5IPfgpqLQDMVWl5WnFhVm5PeUk/view?usp=sharing).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Technical Details ##
+- Ruby 2.3.3
+- Rails 5
+- Hosted on Heroku [here](empathy-project.herokuapp.com) using ClearDB 
