@@ -6,4 +6,7 @@ If you would like to read my final report (non-technical), you can find it [here
 ## Technical Details ##
 - Ruby 2.3.3
 - Rails 5
+- Semantic UI
 - Hosted on Heroku [here](empathy-project.herokuapp.com) using ClearDB 
+
+Tags code adapted from [here] (https://www.sitepoint.com/tagging-scratch-rails/) (currently not in use)
